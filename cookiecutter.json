@@ -2,9 +2,11 @@
     "author_name": "E.R. Uber",
     "author_email": "eruber@gmail.com",
 
-    "project_name": "Python Project Template",
+    "project_name": "Project Template",
+    "project_dist": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_repo": "python-{{ cookiecutter.project_dist }}",
+    "project_pckg":  "{{ cookiecutter.project_dist.replace('-', '_') }}",
 
-    "project_repo": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_version": "0.0.0",
     "project_description": "A general purpose Python project template",
     "project_incept_date": "{% now 'local', '%c' %}",
