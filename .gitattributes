@@ -1,0 +1,51 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# ###################################################
+# Basic .gitattributes for a python repo.
+# See: https://github.com/alexkaratarakis/gitattributes/blob/master/Python.gitattributes
+
+# Source files
+# ============
+*.pxd       text
+*.py        text
+*.py3       text
+*.pyw       text
+*.pyx       text
+*.yml       text
+*.json      text
+
+# Binary files
+# ============
+*.db        binary
+*.p         binary
+*.pkl       binary
+*.pyc       binary
+*.pyd       binary
+*.pyo       binary
+*.png       binary
+*.jpg       binary
+*.gif       binary
+*.xlsx      binary
+
+# Note: .db, .p, and .pkl files are associated
+# with the python modules ``pickle``, ``dbm.*``,
+# ``shelve``, ``marshal``, ``anydbm``, & ``bsddb``
+# (among others).
+
+# documenation
+# =============
+*.rst       text
+*.html      text
+*.css       text
+
+# ###################################################
+# You can also instruct GibHub to ignore vendored files
+# that might be confusing it and marking your Python
+# project as a CSS project or some such nonsense.
+#
+# See: https://medium.com/black-tech-diva/how-to-change-repo-language-in-github-c3e07819c5bb
+#
+# Specific the appropriate locations in your repo that are vendored files
+# and instruct GitHub's linguist library to ignore them, as in:
+# static/* linguist-vendored
