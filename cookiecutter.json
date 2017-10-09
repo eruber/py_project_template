@@ -1,0 +1,21 @@
+{
+    "author_name": "E.R. Uber",
+    "author_email": "eruber@gmail.com",
+
+    "project_name": "Python Project Template",
+
+    "project_repo": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_version": "0.0.0",
+    "project_description": "A general purpose Python project template",
+    "project_incept_date": "{% now 'local', '%c' %}",
+    "license": ["MIT", "BSD3", "ISC", "Apache2", "GNU-GPL-v3", "Not open source"],
+
+    "github_username": "eruber",
+    "travis_username": "{{ cookiecutter.github_username }}",
+    "pypi_username": "{{ cookiecutter.github_username }}",
+
+    "github_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_repo }}",
+    "travis_url": "https://travis-ci.org/{{ cookiecutter.travis_username }}/{{ cookiecutter.project_repo }}",
+
+
+}
