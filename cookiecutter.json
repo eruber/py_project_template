@@ -15,5 +15,5 @@
     "pypi_username": "{{ cookiecutter.github_username }}",
 
     "github_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_repo }}",
-    "travis_url": "https://travis-ci.org/{{ cookiecutter.travis_username }}/{{ cookiecutter.project_repo }}",
+    "travis_url": "https://travis-ci.org/{{ cookiecutter.travis_username }}/{{ cookiecutter.project_repo }}"
 }
