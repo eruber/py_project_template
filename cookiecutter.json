@@ -5,7 +5,7 @@
     "project_name": "Project Template",
     "project_dist": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_repo": "python-{{ cookiecutter.project_dist }}",
-    "project_pckg":  "{{ cookiecutter.project_dist.replace('-', '_') }}",
+    "project_pkg" :  "{{ cookiecutter.project_dist.replace('-', '_') }}",
 
     "project_version": "0.0.0",
     "project_description": "A general purpose Python project template",
