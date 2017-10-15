@@ -1,0 +1,4 @@
+include README.md LICENSE Pipfile cookiecutter.json
+recursive-include docs *
+recursive-include tests *.py
+recursive-include {{cookiecutter.project_repo}} *
