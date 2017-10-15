@@ -36,10 +36,9 @@ import pytest
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
-__author__ = '{{cookiecutter.author_name}} ({{cookiecutter.author_email}})'
-__license__ = '{{cookiecutter.license}} - See LICENSE file in project root'
-__copyright__ = "Copyright (C) {% now 'local', ' % Y' %} " \
-                "by {{cookiecutter.author_name}}"
+__author__ = 'E.R. Uber (eruber@gmail.com)'
+__license__ = 'MIT'
+__copyright__ = "Copyright (C) 2917 by E.R. Uber"
 
 # ----------------------------------------------------------------------------
 # Module Global & Constant Definitions
