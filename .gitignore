@@ -62,6 +62,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+{{cookiecutter.project_repo}}/docs/_build/
 
 # PyBuilder
 target/
