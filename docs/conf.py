@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Python Project Template documentation build configuration file, created by
-# sphinx-quickstart on Sun Oct 15 10:55:22 2017.
+# sphinx-quickstart on Sun Oct 15 21:13:17 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -32,7 +32,10 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
+    'sphinx.ext.todo',
     'sphinx.ext.coverage',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
     'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,13 +74,13 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 
 # -- Options for HTML output ----------------------------------------------
