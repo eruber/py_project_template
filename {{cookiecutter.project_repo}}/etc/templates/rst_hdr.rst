@@ -12,7 +12,7 @@
 
 .. ###########################################################################
 
-   Copyright (C) {% now 'local', ' % Y' %} by {{cookiecutter.author_name}}
+   Copyright (C) {% now 'local', ' %Y' %} by {{cookiecutter.author_name}}
 
     Author: {{cookiecutter.author_name}} ({{cookiecutter.author_email}})
    License: {{cookiecutter.license}} - See LICENSE file in project root
