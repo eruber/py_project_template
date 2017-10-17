@@ -25,7 +25,7 @@ import click
 # ----------------------------------------------------------------------------
 __author__ = '{{cookiecutter.author_name}} ({{cookiecutter.author_email}})'
 __license__ = '{{cookiecutter.license}} - See LICENSE file in project root'
-__copyright__ = "Copyright (C) {% now 'local', ' % Y' %} " \
+__copyright__ = "Copyright (C) {% now 'local', ' %Y' %} " \
                 "by {{cookiecutter.author_name}}"
 
 # ----------------------------------------------------------------------------
