@@ -36,7 +36,7 @@ else:
 # ----------------------------------------------------------------------------
 __author__ = 'E.R. Uber (eruber@gmail.com)'
 __license__ = 'MIT'
-__copyright__ = "Copyright (C) 2917 by E.R. Uber"
+__copyright__ = "Copyright (C) 2017 by E.R. Uber"
 
 # ----------------------------------------------------------------------------
 # Module Global & Constant Definitions
