@@ -4,3 +4,4 @@ recursive-include {{cookiecutter.project_repo}}/docs *
 recursive-include {{cookiecutter.project_repo}}/etc *
 recursive-include {{cookiecutter.project_repo}}/src *
 recursive-include {{cookiecutter.project_repo}}/tests *
+include {{cookiecutter.project_repo}}/LICENSE
