@@ -110,11 +110,19 @@ def check_output_inside_dir(command, dirpath):
 
 
 # [LOC1]
-def test_year_compute_in_license_file(cookies):
-    with bake_in_temp_dir(cookies) as result:
-        license_file_path = result.project.join('LICENSE')
-        now = datetime.datetime.now()
-        assert str(now.year) in license_file_path.read()
+# def test_year_compute_in_license_file(cookies):
+#     with bake_in_temp_dir(cookies) as result:
+#         license_file_path = result.project.join('LICENSE')
+#         now = datetime.datetime.now()
+#         assert str(now.year) in license_file_path.read()
+
+def test_bake_project(cookies):
+    result = cookies.bake(extra_context={'project_name': 'Test Project'})
+
+    assert result.exit_code == 0
+    assert result.exception is None
+    assert result.project.basename == 'helloworld'
+    assert result.project.isdir()
 
 
 # ----------------------------------------------------------------------------

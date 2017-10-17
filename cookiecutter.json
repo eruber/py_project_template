@@ -2,7 +2,7 @@
     "author_name": "E.R. Uber",
     "author_email": "eruber@gmail.com",
 
-    "project_name": "Project Template",
+    "project_name": "Project Skeleton",
     "project_dist": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_repo": "python-{{ cookiecutter.project_dist }}",
     "project_pkg" :  "{{ cookiecutter.project_dist.replace('-', '_') }}",
