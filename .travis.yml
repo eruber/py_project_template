@@ -1,0 +1,52 @@
+# Config file for automatic testing at travis-ci.org
+# See: https://docs.travis-ci.com/user/customizing-the-build/
+
+sudo: false
+language: python
+
+matrix:
+    include:
+      - python: 3.3
+        env: TOX_ENV=py33
+      - python: 3.4
+        env: TOX_ENV=py34
+      - python: 3.5
+        env: TOX_ENV=py35
+      - python: 3.6
+        env: TOX_ENV=py36
+      - python: pypy
+        env: TOX_ENV=pypy
+      - python: 3.6
+        env: TOX_ENV=flake8
+
+install:
+  - pip install tox
+
+script:
+  - tox -e $TOX_ENV
+
+before_cache:
+  - rm -rf $HOME/.cache/pip/log
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+# Deploying build to PyPI
+# See: https://docs.travis-ci.com/user/deployment/pypi/
+#
+# before_deploy:
+
+# deploy:
+#   provider: pypi
+#   distributions: sdist
+#   user: audreyr
+#   password:
+#     secure: PLEASE_REPLACE_ME
+#   skip_cleanup: true
+#   on:
+#     tags: true
+#     repo: audreyr/python_boilerplate
+#     condition: $TOXENV == py27
+
+# after_deploy:
