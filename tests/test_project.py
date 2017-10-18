@@ -104,24 +104,62 @@ def check_output_inside_dir(command, dirpath):
     with inside_dir(dirpath):
         return subprocess.check_output(shlex.split(command))
 
+
+# [LOC1]
+def project_info(result):
+    """Get toplevel dir, project_slug, and project dir from baked cookies"""
+    project_path = str(result.project)
+    project_slug = os.path.split(project_path)[-1]
+    project_dir = os.path.join(project_path, project_slug)
+    return project_path, project_slug, project_dir
+
 # ----------------------------------------------------------------------------
 # Tests...
 # ----------------------------------------------------------------------------
 
 
 # [LOC1]
-# def test_year_compute_in_license_file(cookies):
-#     with bake_in_temp_dir(cookies) as result:
-#         license_file_path = result.project.join('LICENSE')
-#         now = datetime.datetime.now()
-#         assert str(now.year) in license_file_path.read()
+def test_year_compute_in_license_file(cookies):
+    with bake_in_temp_dir(cookies) as result:
+        license_file_path = result.project.join('LICENSE')
+        now = datetime.datetime.now()
+        assert str(now.year) in license_file_path.read()
+
+
+# [LOC1]
+# ["MIT", "BSD3", "ISC", "Apache2", "GNU-GPL-v3", "Not open source"]
+def test_bake_selecting_license(cookies):
+    license_strings = {
+        'MIT': 'MIT License',
+        'BSD3': 'Redistributions of source code must retain the above copyright notice, this',
+        'ISC': 'ISC License',
+        'Apache2': 'Licensed under the Apache License, Version 2.0',
+        'GNU-GPL-v3': 'GNU GENERAL PUBLIC LICENSE',
+    }
+    for license, target_string in license_strings.items():
+        with bake_in_temp_dir(cookies, extra_context={'license': license}) as result:
+            assert target_string in result.project.join('LICENSE').read()
+
+            # NEED TO ADD a project setup.py file for this to pass
+            # already have a template setup.py file, but this one is for
+            # the project
+            assert license in result.project.join('setup.py').read()
+
 
 def test_bake_project(cookies):
-    result = cookies.bake(extra_context={'project_name': 'Test Project'})
+    result = cookies.bake(extra_context={'project_name': 'TestProject'})
+
+    # p, s, d = project_info(result)
+    # print(f"Project Path: {p}")
+    # print(f"Project Slug: {s}")
+    # print(f" Project Dir: {d}")
+
+    if result.trace_back:
+        print(result.trace_back_stack)
 
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == 'helloworld'
+    assert result.project.basename == 'python-testproject'
     assert result.project.isdir()
 
 
