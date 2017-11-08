@@ -8,16 +8,12 @@
    For information regarding Sphinx specific markup see
       http://sphinx.pocoo.org/markup/index.html
 
-   ###########################################################################
-
 .. ###########################################################################
 
    Copyright (C) {% now 'local', ' %Y' %} by {{cookiecutter.author_name}}
 
     Author: {{cookiecutter.author_name}} ({{cookiecutter.author_email}})
-   License: {{cookiecutter.license}} - See LICENSE file in project root
-
-   ###########################################################################
+   License: {{cookiecutter.project_license}} - See LICENSE file in project root
 
 .. ########################## SECTION HEADING REMINDER #######################
    # with overline, for parts

@@ -14,6 +14,9 @@
 *.pyx       text
 *.yml       text
 *.json      text
+*.ini       text
+*.toml      text
+*.txt       text
 
 # Binary files
 # ============

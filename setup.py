@@ -47,7 +47,7 @@ with open(path.join(project_root, 'README.rst'), encoding='utf-8') as f:
 # All preferred keyword directives are documented below,
 # some may not be needed and are thus commented out, or empty.
 setup(
-    name='python-project-template',
+    name='python-project-skeleton',
     packages=[],
     version='0.1.0',
     description='General purpose Python project template of optional scope',
@@ -55,7 +55,7 @@ setup(
     author='E.R. Uber',
     author_email='eruber@gmail.com',
     license='MIT',
-    url='https://github.com/eruber/python-project-template',
+    url='https://github.com/eruber/python-project-skeleton',
 
     classifiers=[
         #   3 - Alpha
@@ -73,11 +73,10 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development',
     ],
 
-    keywords='cookiecutter template project development',
+    keywords='cookiecutter template project development skeleton',
 
     # Python 3.3 and up but not willing to commit to Python 4 support yet.
     # For more examples, see:

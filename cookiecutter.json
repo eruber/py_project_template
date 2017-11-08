@@ -1,21 +1,264 @@
 {
-    "author_name": "E.R. Uber",
-    "author_email": "eruber@gmail.com",
+    "name": "python-project-skeleton-template",
+    "cookiecutter_version": "2.0.0",
+    "_inception": "Transformed by cctconvert 1.0.1 Fri Nov  3 20:17:29 2017",
+    "description": "Cookiecutter template for a general purpose Python project skeleton",
+    "authors": ["E.R. Uber"],
+    "license": "MIT",
+    "keywords": ["cookiecutter","python", "project", "template"],
+    "url": "http://python-project-skeleton-template.readthedocs.io/en/latest/index.html",
+    "variables": [
+        {
+            "name": "author_name",
+            "default": "E.R. Uber"
+        },
+        {
+            "name": "author_email",
+            "default": "eruber@gmail.com",
+        },
+        {
+            "name": "project_name",
+            "default": "Project Skeleton"
+        },
+        {
+            "name": "project_dist",
+            "default": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+            "prompt_user": false
+        },
+        {
+            "name": "project_repo",
+            "default": "python-{{ cookiecutter.project_dist }}",
+            "prompt_user": false
+        },
+        {
+            "name": "project_pkg",
+            "default": "{{ cookiecutter.project_dist.replace('-', '_') }}",
+            "prompt_user": false
 
-    "project_name": "Project Skeleton",
-    "project_dist": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-    "project_repo": "python-{{ cookiecutter.project_dist }}",
-    "project_pkg" :  "{{ cookiecutter.project_dist.replace('-', '_') }}",
-
-    "project_version": "0.0.0",
-    "project_description": "A general purpose Python project template",
-    "project_incept_date": "{% now 'local', '%c' %}",
-    "license": ["MIT", "BSD3", "ISC", "Apache2", "GNU-GPL-v3", "Not open source"],
-
-    "github_username": "eruber",
-    "travis_username": "{{ cookiecutter.github_username }}",
-    "pypi_username": "{{ cookiecutter.github_username }}",
-
-    "github_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_repo }}",
-    "travis_url": "https://travis-ci.org/{{ cookiecutter.travis_username }}/{{ cookiecutter.project_repo }}"
+        },
+        {
+            "name": "project_version",
+            "default": "0.0.0"
+        },
+        {
+            "name": "project_description",
+            "default": "A general purpose Python project skeleton"
+        },
+        {
+            "name": "project_license",
+            "default": "MIT",
+            "choices": [
+                "MIT",
+                "BSD3",
+                "ISC",
+                "Apache2",
+                "GNU-GPL-v3"
+            ]
+        },
+        {
+            "name": "project_scope",
+            "default": "module",
+            "choices": [
+                "module",
+                "package",
+                "library",
+                "application"
+            ]
+        },
+        {
+            "name": "project_cmdline_interface",
+            "default": "none",
+            "choices": [
+                "none",
+                "click"
+            ]
+        },
+        {
+            "name": "project_graphical_inteface",
+            "default": "none",
+            "choices": [
+                "none",
+                "tk",
+                "wxwidgets",
+                "kivy"
+            ]
+        },
+        {
+            "name": "project_shell_interface",
+            "default": "none",
+            "choices": [
+                "none",
+                "cmd",
+                "shellocity"
+            ]
+        },
+        {
+            "name": "project_machine_inteface",
+            "default": "none",
+            "choices": [
+                "none",
+                "api"
+            ]
+        },
+        {
+            "name": "project_config_format",
+            "default": "none",
+            "choices": [
+                "none",
+                "json",
+                "yaml",
+                "ini",
+                "toml"
+            ]
+        },
+        {
+            "name": "project_console_logging_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "project_console_logging_level",
+            "default": "WARN",
+            "choices": [
+                "WARN",
+                "INFO",
+                "DEBUG",
+                "ERROR"
+            ],
+            "skip_if": "{{cookiecutter.project_console_logging_enabled == False}}"
+        },
+        {
+            "name": "project_file_logging_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "project_file_logging_level",
+            "default": "DEBUG",
+            "choices": [
+                "DEBUG",
+                "INFO",
+                "WARN",
+                "ERROR"
+            ],
+            "skip_if": "{{cookiecutter.project_file_logging_enabled == False}}"
+        },
+        {
+            "name": "project_file_logging_type",
+            "default": "log_to_single_file",
+            "choices": [
+                "log_to_single_file",
+                "Log_to_rotating_file"
+            ],
+            "skip_if": "{{cookiecutter.project_file_logging_enabled == False}}"
+        },
+        {
+            "name": "github_username",
+            "default": "eruber"
+        },
+        {
+            "name": "test_framework",
+            "default": "pytest",
+            "choices": [
+                "pytest",
+                "none"
+            ]
+        },
+        {
+            "name": "test_coverage_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "ci_travis_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "ci_appveyor_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "project_code_standards",
+            "default": "flake8",
+            "choices": [
+                "flake8",
+                "pylama",
+                "none"]
+        },
+        {
+            "name": "project_complexity_enabled",
+            "default": "yes",
+            "description": "Add pytest plugin to run McCabe Code Complexity Checker",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "deploy_pypi_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "deploy_readthedocs_enabled",
+            "default": "yes",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "_derived",
+            "default": {
+                "author": "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
+                "incept_date": "{% now 'local', '%c' %}",
+                "project_file_logging_rotating_file_count": "5",
+                "github": {
+                    "url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_repo }}"
+                },
+                "ci": {
+                    "travis": {
+                        "username": "{{ cookiecutter.github_username }}",
+                        "url": "https://travis-ci.org/{{ cookiecutter.travis_username }}/{{ cookiecutter.project_repo }}"
+                    },
+                    "appveyor": {
+                        "username": "{{ cookiecutter.github_username }}",
+                        "url": "https://travis-ci.org/{{ cookiecutter.travis_username }}/{{ cookiecutter.project_repo }}"
+                    }
+                },
+                "deploy": {
+                    "pypi": {
+                        "username": "{{ cookiecutter.github_username }}",
+                        "url": "https://pypi.python.org/pypi"
+                    },
+                    "readthedocs": {
+                        "username": "{{ cookiecutter.github_username }}",
+                        "url_project": "https://readthedocs.org/projects/{{ cookiecutter.project_repo }}/",
+                        "url_docs": "http://{{ cookiecutter.project_repo }}.readthedocs.io/en/latest/"
+                    }
+                }
+            },
+            "prompt_user": false
+        }
+    ]
 }

@@ -1,7 +1,7 @@
 include README.md LICENSE Pipfile cookiecutter.json
 recursive-include docs *
-recursive-include {{cookiecutter.project_repo}}/docs *
-recursive-include {{cookiecutter.project_repo}}/etc *
-recursive-include {{cookiecutter.project_repo}}/src *
-recursive-include {{cookiecutter.project_repo}}/tests *
-include {{cookiecutter.project_repo}}/LICENSE
+recursive-include {{cookiecutter.project.repo}}/docs *
+recursive-include {{cookiecutter.project.repo}}/etc *
+recursive-include {{cookiecutter.project.repo}}/src *
+recursive-include {{cookiecutter.project.repo}}/tests *
+include {{cookiecutter.project.repo}}/LICENSE

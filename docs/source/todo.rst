@@ -15,7 +15,7 @@
    Copyright (C) {% now 'local', ' % Y' %} by {{cookiecutter.author_name}}
 
     Author: {{cookiecutter.author_name}} ({{cookiecutter.author_email}})
-   License: {{cookiecutter.license}} - See LICENSE file in project root
+   License: {{cookiecutter.project_license}} - See LICENSE file in project root
 
    ###########################################################################
 
@@ -34,9 +34,12 @@ TODO
 ****
 Do the following in the order specified.
 
-* Template Testing - Write Tests / Run Tests / Debug Tests
-* Create **hooks/pre_gen_project.py** see **etc_lib.rst**
-* Create **hooks/post_gen_project.py** see **etc_lib.rst**
+* DONE - Template Testing - get initial pytest/pytest-cookies env working
+* DONE - First unit test to test the generated LICENSE file
+* DONE - Create **hooks/pre_gen_project.py** see **etc_lib.rst**
+* DONE - Create **hooks/post_gen_project.py** see **etc_lib.rst**
+* Re-Test with the new cookiecutter.json dictionary format v1.5.1+
+* Flesh out rest of cookiecutter.json variables and associated files/code
 * Template Documentation
 * Template Testing - Write Tests / Run Tests / Debug Tests
 * Project Documentation
@@ -51,7 +54,7 @@ Do the following in the order specified.
 * Investigate tasks.py via Invoke
 * Investigate ReadTheDocs deployment (did it with the IMM project)
 * Somewhere along the line adopt the latest tools for handling requirements -- pipenv
-*
+* Travis autodeployment to PyPI -- see cookiecutter template reference 001
 
 
 

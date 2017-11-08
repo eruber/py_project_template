@@ -15,7 +15,7 @@
    Copyright (C) {% now 'local', ' % Y' %} by {{cookiecutter.author_name}}
 
     Author: {{cookiecutter.author_name}} ({{cookiecutter.author_email}})
-   License: {{cookiecutter.license}} - See LICENSE file in project root
+   License: {{cookiecutter.project_license}} - See LICENSE file in project root
 
    ###########################################################################
 
@@ -38,7 +38,7 @@ conditional code generation is controlled by various settings in
 **Cookiecutter.json**.
 
 When support for this conditional code is needed, the appropriate module
-in this directory will be copied to the **scr** directory's **util**
+in this directory will be copied to the **src** directory's **util**
 sub-directory (which may need to be created if it does not already exist).
 This is done in the Cookiecutter hook **pre_gen_project.py**.
 
